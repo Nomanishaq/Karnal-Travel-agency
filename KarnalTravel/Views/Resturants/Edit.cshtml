@@ -1,0 +1,74 @@
+﻿    @model KarnalTravel.Resturant
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/BackEnd.cshtml";
+}
+<style>
+    .move-side {
+        margin-left: 40px;
+    }
+</style>
+<div class="move-side">
+    <h2>Edit Resturant</h2>
+    <br />
+
+
+    <form action="~/Resturants/Edit" method="post" enctype="multipart/form-data">
+      
+        <input type="hidden" name="id" value="@Model.Id" />
+        
+         <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" name="Name" value="@Model.Name" required />
+        </div>
+        <div class="form-group">
+            <label for="file">Photo</label>
+            <input type="file" id="file" class="form-control" name="file" required value="@Model.Photo" onchange="abc()"/>
+            <script>
+                function abc() {
+                    var x = document.getElementById("file").value;
+                    if (x != "") {
+                        document.getElementById("fname").style.display = 'none';
+                    }
+                }
+            </script>
+          @if (@Model.Photo != null) { 
+              <input type="text" id="fname" class="form-control" name="fileName" readonly  value="@Model.Photo" />
+          }
+        </div>
+
+        <div class="form-group">
+            <label for="Detail">Detail</label>
+            <input type="text" class="form-control" name="Detail" required value="@Model.Details" />
+        </div>
+        <div class="form-group">
+            <label for="Country">Country</label>
+            <select id="c" name="country" class="form-control">
+                <option>Select Country</option>
+                @foreach (var item in (List<Country>)ViewBag.CountryId)
+                {
+                        <option value="@item.Id">@item.Name</option>
+                
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Edit" class="btn btn-primary" />
+        </div>
+    </form>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#c").val(@Model.CountryId).change();
+        });
+
+    </script>
+    <br />
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>

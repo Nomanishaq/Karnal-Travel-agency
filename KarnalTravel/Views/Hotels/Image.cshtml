@@ -1,0 +1,46 @@
+﻿@model KarnalTravel.HotelImage
+
+@{
+    ViewBag.Title = "Image";
+    Layout = "~/Views/Shared/BackEnd.cshtml";
+    var imglst = (List<KarnalTravel.HotelImage>)ViewBag.ImgList;
+}
+
+<style>
+    .moveleft{
+        margin-left:40px;
+    }
+</style>
+<div class="moveleft">
+    <h2>Add Image For @ViewBag.rname</h2>
+    <br />
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="rid" value="@ViewBag.rid" />
+        <input type="file" name="file" value="" class="btn btn-primary" required />
+        <input type="submit" name="name" value="Submit" class="btn btn-success" />
+    </form>
+
+    <br /><br />
+    <table>
+        <tr>
+            <td>
+                <div class="row">
+                    @foreach (var item in imglst)
+                    {
+                        <img src="~/Uploading/@item.ImageUrl" width="300" height="200" />
+
+                    }
+
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br />
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

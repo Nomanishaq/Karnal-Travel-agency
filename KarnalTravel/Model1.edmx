@@ -1,0 +1,1211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KarnalTravelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ContactUs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Audlts" Type="varchar" MaxLength="50" />
+          <Property Name="Kids" Type="varchar" MaxLength="50" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
+          <Property Name="Message" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Feedbacks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Answer1" Type="varchar" MaxLength="50" />
+          <Property Name="Answer2" Type="varchar" MaxLength="50" />
+          <Property Name="Answer3" Type="varchar" MaxLength="50" />
+          <Property Name="Answer4" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="HotelImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="varchar(max)" />
+          <Property Name="HotelId" Type="int" />
+        </EntityType>
+        <EntityType Name="HotelOrders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="HotelId" Type="int" />
+          <Property Name="RequiredRooms" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="Hotels">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Photo" Type="varchar" MaxLength="50" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="RoomPrice" Type="int" Nullable="false" />
+          <Property Name="PercentDiscount" Type="int" Nullable="false" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="ResortImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="varchar(max)" />
+          <Property Name="ResortId" Type="int" />
+        </EntityType>
+        <EntityType Name="Resorts ">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Photo" Type="varchar" MaxLength="50" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="Location" Type="varchar(max)" />
+          <Property Name="RoomPrice" Type="int" Nullable="false" />
+          <Property Name="PercentDiscount" Type="int" Nullable="false" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="RestaurantsOrders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="RestaurantsId" Type="int" />
+          <Property Name="RequiredPercentSets" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="ResturantImages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imgUrl" Type="varchar" MaxLength="100" />
+          <Property Name="resturantId" Type="int" />
+        </EntityType>
+        <EntityType Name="Resturants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Photo" Type="varchar" MaxLength="50" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="PercentDiscount" Type="int" />
+        </EntityType>
+        <EntityType Name="ToristspotImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imgurl" Type="varchar(max)" />
+          <Property Name="Touristspotid" Type="int" />
+        </EntityType>
+        <EntityType Name="TouristSpotOrders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="TouristSpotsId" Type="int" />
+          <Property Name="Person" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="TouristSpots">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Photo" Type="varchar" MaxLength="50" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="TransportImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="varchar(max)" />
+          <Property Name="TransportId" Type="int" />
+        </EntityType>
+        <EntityType Name="Transportion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BussName" Type="varchar" MaxLength="50" />
+          <Property Name="Photo" Type="varchar(max)" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="Price" Type="varchar" MaxLength="50" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="UserTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="UserTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK__Resturant__restu__160F4887">
+          <End Role="Resturants" Type="Self.Resturants" Multiplicity="0..1" />
+          <End Role="ResturantImages" Type="Self.ResturantImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resturants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResturantImages">
+              <PropertyRef Name="resturantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HotelImage_Hotels">
+          <End Role="Hotels" Type="Self.Hotels" Multiplicity="0..1" />
+          <End Role="HotelImage" Type="Self.HotelImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotels">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HotelImage">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HotelOrders_Hotels">
+          <End Role="Hotels" Type="Self.Hotels" Multiplicity="0..1" />
+          <End Role="HotelOrders" Type="Self.HotelOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotels">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HotelOrders">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HotelOrders_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="HotelOrders" Type="Self.HotelOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HotelOrders">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hotels_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="Hotels" Type="Self.Hotels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Hotels">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reports_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="Resorts " Type="Self.Resorts " Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resorts ">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResortImage_Resorts ">
+          <End Role="Resorts " Type="Self.Resorts " Multiplicity="0..1" />
+          <End Role="ResortImage" Type="Self.ResortImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resorts ">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResortImage">
+              <PropertyRef Name="ResortId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RestaurantsOrders_Resturants">
+          <End Role="Resturants" Type="Self.Resturants" Multiplicity="0..1" />
+          <End Role="RestaurantsOrders" Type="Self.RestaurantsOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resturants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RestaurantsOrders">
+              <PropertyRef Name="RestaurantsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RestaurantsOrders_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="RestaurantsOrders" Type="Self.RestaurantsOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RestaurantsOrders">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resturants_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="Resturants" Type="Self.Resturants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resturants">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ToristspotImages_TouristSpots">
+          <End Role="TouristSpots" Type="Self.TouristSpots" Multiplicity="0..1" />
+          <End Role="ToristspotImages" Type="Self.ToristspotImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TouristSpots">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ToristspotImages">
+              <PropertyRef Name="Touristspotid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TouristSpotOrders_TouristSpots">
+          <End Role="TouristSpots" Type="Self.TouristSpots" Multiplicity="0..1" />
+          <End Role="TouristSpotOrders" Type="Self.TouristSpotOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TouristSpots">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TouristSpotOrders">
+              <PropertyRef Name="TouristSpotsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TouristSpotOrders_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TouristSpotOrders" Type="Self.TouristSpotOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TouristSpotOrders">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TouristSpots_Countries1">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="TouristSpots" Type="Self.TouristSpots" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TouristSpots">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransportImages_Transportion">
+          <End Role="Transportion" Type="Self.Transportion" Multiplicity="0..1" />
+          <End Role="TransportImages" Type="Self.TransportImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transportion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TransportImages">
+              <PropertyRef Name="TransportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transportion_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="Transportion" Type="Self.Transportion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transportion">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UserTypes">
+          <End Role="UserTypes" Type="Self.UserTypes" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="UserTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KarnalTravelModelStoreContainer">
+          <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feedbacks" EntityType="Self.Feedbacks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotelImage" EntityType="Self.HotelImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotelOrders" EntityType="Self.HotelOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hotels" EntityType="Self.Hotels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResortImage" EntityType="Self.ResortImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resorts " EntityType="Self.Resorts " Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RestaurantsOrders" EntityType="Self.RestaurantsOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResturantImages" EntityType="Self.ResturantImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resturants" EntityType="Self.Resturants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ToristspotImages" EntityType="Self.ToristspotImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TouristSpotOrders" EntityType="Self.TouristSpotOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TouristSpots" EntityType="Self.TouristSpots" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransportImages" EntityType="Self.TransportImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transportion" EntityType="Self.Transportion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Resturant__restu__160F4887" Association="Self.FK__Resturant__restu__160F4887">
+            <End Role="Resturants" EntitySet="Resturants" />
+            <End Role="ResturantImages" EntitySet="ResturantImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HotelImage_Hotels" Association="Self.FK_HotelImage_Hotels">
+            <End Role="Hotels" EntitySet="Hotels" />
+            <End Role="HotelImage" EntitySet="HotelImage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HotelOrders_Hotels" Association="Self.FK_HotelOrders_Hotels">
+            <End Role="Hotels" EntitySet="Hotels" />
+            <End Role="HotelOrders" EntitySet="HotelOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HotelOrders_Users" Association="Self.FK_HotelOrders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="HotelOrders" EntitySet="HotelOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hotels_Countries" Association="Self.FK_Hotels_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Hotels" EntitySet="Hotels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reports_Countries" Association="Self.FK_Reports_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Resorts " EntitySet="Resorts " />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResortImage_Resorts " Association="Self.FK_ResortImage_Resorts ">
+            <End Role="Resorts " EntitySet="Resorts " />
+            <End Role="ResortImage" EntitySet="ResortImage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RestaurantsOrders_Resturants" Association="Self.FK_RestaurantsOrders_Resturants">
+            <End Role="Resturants" EntitySet="Resturants" />
+            <End Role="RestaurantsOrders" EntitySet="RestaurantsOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RestaurantsOrders_Users" Association="Self.FK_RestaurantsOrders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RestaurantsOrders" EntitySet="RestaurantsOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resturants_Countries" Association="Self.FK_Resturants_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Resturants" EntitySet="Resturants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ToristspotImages_TouristSpots" Association="Self.FK_ToristspotImages_TouristSpots">
+            <End Role="TouristSpots" EntitySet="TouristSpots" />
+            <End Role="ToristspotImages" EntitySet="ToristspotImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TouristSpotOrders_TouristSpots" Association="Self.FK_TouristSpotOrders_TouristSpots">
+            <End Role="TouristSpots" EntitySet="TouristSpots" />
+            <End Role="TouristSpotOrders" EntitySet="TouristSpotOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TouristSpotOrders_Users" Association="Self.FK_TouristSpotOrders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TouristSpotOrders" EntitySet="TouristSpotOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TouristSpots_Countries1" Association="Self.FK_TouristSpots_Countries1">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="TouristSpots" EntitySet="TouristSpots" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransportImages_Transportion" Association="Self.FK_TransportImages_Transportion">
+            <End Role="Transportion" EntitySet="Transportion" />
+            <End Role="TransportImages" EntitySet="TransportImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transportion_Countries" Association="Self.FK_Transportion_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Transportion" EntitySet="Transportion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserTypes" Association="Self.FK_Users_UserTypes">
+            <End Role="UserTypes" EntitySet="UserTypes" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KarnalTravelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="HotelOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="HotelId" Type="Int32" />
+          <Property Name="RequiredRooms" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Int32" />
+          <NavigationProperty Name="Hotel" Relationship="Self.FK_HotelOrders_Hotels" FromRole="HotelOrders" ToRole="Hotels" />
+          <NavigationProperty Name="User" Relationship="Self.FK_HotelOrders_Users" FromRole="HotelOrders" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RoomPrice" Type="Int32" Nullable="false" />
+          <Property Name="PercentDiscount" Type="Int32" Nullable="false" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="HotelOrders" Relationship="Self.FK_HotelOrders_Hotels" FromRole="Hotels" ToRole="HotelOrders" />
+          <NavigationProperty Name="Country" Relationship="KarnalTravelModel.FK_Hotels_Countries" FromRole="Hotel" ToRole="Country" />
+          <NavigationProperty Name="HotelImages" Relationship="KarnalTravelModel.FK_HotelImage_Hotels" FromRole="Hotel" ToRole="HotelImage" />
+        </EntityType>
+        <EntityType Name="RestaurantsOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="RestaurantsId" Type="Int32" />
+          <Property Name="RequiredPercentSets" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK_RestaurantsOrders_Users" FromRole="RestaurantsOrders" ToRole="Users" />
+          <NavigationProperty Name="Resturant" Relationship="KarnalTravelModel.FK_RestaurantsOrders_Resturants" FromRole="RestaurantsOrder" ToRole="Resturant" />
+        </EntityType>
+        <EntityType Name="TouristSpotOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="TouristSpotsId" Type="Int32" />
+          <Property Name="Person" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK_TouristSpotOrders_Users" FromRole="TouristSpotOrders" ToRole="Users" />
+          <NavigationProperty Name="TouristSpot" Relationship="KarnalTravelModel.FK_TouristSpotOrders_TouristSpots" FromRole="TouristSpotOrder" ToRole="TouristSpot" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserTypeId" Type="Int32" />
+          <NavigationProperty Name="HotelOrders" Relationship="Self.FK_HotelOrders_Users" FromRole="Users" ToRole="HotelOrders" />
+          <NavigationProperty Name="RestaurantsOrders" Relationship="Self.FK_RestaurantsOrders_Users" FromRole="Users" ToRole="RestaurantsOrders" />
+          <NavigationProperty Name="TouristSpotOrders" Relationship="Self.FK_TouristSpotOrders_Users" FromRole="Users" ToRole="TouristSpotOrders" />
+          <NavigationProperty Name="UserType" Relationship="Self.FK_Users_UserTypes" FromRole="Users" ToRole="UserTypes" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_UserTypes" FromRole="UserTypes" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_HotelOrders_Hotels">
+          <End Role="Hotels" Type="Self.Hotel" Multiplicity="0..1" />
+          <End Role="HotelOrders" Type="Self.HotelOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotels">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HotelOrders">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HotelOrders_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="HotelOrders" Type="Self.HotelOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HotelOrders">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RestaurantsOrders_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="RestaurantsOrders" Type="Self.RestaurantsOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RestaurantsOrders">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TouristSpotOrders_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TouristSpotOrders" Type="Self.TouristSpotOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TouristSpotOrders">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UserTypes">
+          <End Role="UserTypes" Type="Self.UserType" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="UserTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KarnalTravelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HotelOrders" EntityType="Self.HotelOrder" />
+          <EntitySet Name="Hotels" EntityType="Self.Hotel" />
+          <EntitySet Name="RestaurantsOrders" EntityType="Self.RestaurantsOrder" />
+          <EntitySet Name="TouristSpotOrders" EntityType="Self.TouristSpotOrder" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+          <AssociationSet Name="FK_HotelOrders_Hotels" Association="Self.FK_HotelOrders_Hotels">
+            <End Role="Hotels" EntitySet="Hotels" />
+            <End Role="HotelOrders" EntitySet="HotelOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HotelOrders_Users" Association="Self.FK_HotelOrders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="HotelOrders" EntitySet="HotelOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RestaurantsOrders_Users" Association="Self.FK_RestaurantsOrders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RestaurantsOrders" EntitySet="RestaurantsOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TouristSpotOrders_Users" Association="Self.FK_TouristSpotOrders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TouristSpotOrders" EntitySet="TouristSpotOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserTypes" Association="Self.FK_Users_UserTypes">
+            <End Role="UserTypes" EntitySet="UserTypes" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Countries" EntityType="KarnalTravelModel.Country" />
+          <AssociationSet Name="FK_Hotels_Countries" Association="KarnalTravelModel.FK_Hotels_Countries">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Hotel" EntitySet="Hotels" />
+          </AssociationSet>
+          <EntitySet Name="Feedbacks" EntityType="KarnalTravelModel.Feedback" />
+          <EntitySet Name="Resturants" EntityType="KarnalTravelModel.Resturant" />
+          <AssociationSet Name="FK_Resturants_Countries" Association="KarnalTravelModel.FK_Resturants_Countries">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Resturant" EntitySet="Resturants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RestaurantsOrders_Resturants" Association="KarnalTravelModel.FK_RestaurantsOrders_Resturants">
+            <End Role="Resturant" EntitySet="Resturants" />
+            <End Role="RestaurantsOrder" EntitySet="RestaurantsOrders" />
+          </AssociationSet>
+          <EntitySet Name="ContactUs" EntityType="KarnalTravelModel.ContactU" />
+          <EntitySet Name="TouristSpots" EntityType="KarnalTravelModel.TouristSpot" />
+          <AssociationSet Name="FK_TouristSpots_Countries1" Association="KarnalTravelModel.FK_TouristSpots_Countries1">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="TouristSpot" EntitySet="TouristSpots" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TouristSpotOrders_TouristSpots" Association="KarnalTravelModel.FK_TouristSpotOrders_TouristSpots">
+            <End Role="TouristSpot" EntitySet="TouristSpots" />
+            <End Role="TouristSpotOrder" EntitySet="TouristSpotOrders" />
+          </AssociationSet>
+          <EntitySet Name="Resorts_" EntityType="KarnalTravelModel.Resorts_" />
+          <AssociationSet Name="FK_Reports_Countries" Association="KarnalTravelModel.FK_Reports_Countries">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Resorts_" EntitySet="Resorts_" />
+          </AssociationSet>
+          <EntitySet Name="ResturantImages" EntityType="KarnalTravelModel.ResturantImage" />
+          <AssociationSet Name="FK__Resturant__restu__160F4887" Association="KarnalTravelModel.FK__Resturant__restu__160F4887">
+            <End Role="Resturant" EntitySet="Resturants" />
+            <End Role="ResturantImage" EntitySet="ResturantImages" />
+          </AssociationSet>
+          <EntitySet Name="ToristspotImages" EntityType="KarnalTravelModel.ToristspotImage" />
+          <AssociationSet Name="FK_ToristspotImages_TouristSpots" Association="KarnalTravelModel.FK_ToristspotImages_TouristSpots">
+            <End Role="TouristSpot" EntitySet="TouristSpots" />
+            <End Role="ToristspotImage" EntitySet="ToristspotImages" />
+          </AssociationSet>
+          <EntitySet Name="HotelImages" EntityType="KarnalTravelModel.HotelImage" />
+          <EntitySet Name="ResortImages" EntityType="KarnalTravelModel.ResortImage" />
+          <EntitySet Name="TransportImages" EntityType="KarnalTravelModel.TransportImage" />
+          <AssociationSet Name="FK_HotelImage_Hotels" Association="KarnalTravelModel.FK_HotelImage_Hotels">
+            <End Role="Hotel" EntitySet="Hotels" />
+            <End Role="HotelImage" EntitySet="HotelImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResortImage_Resorts_" Association="KarnalTravelModel.FK_ResortImage_Resorts_">
+            <End Role="Resorts_" EntitySet="Resorts_" />
+            <End Role="ResortImage" EntitySet="ResortImages" />
+          </AssociationSet>
+          <EntitySet Name="Transportions" EntityType="KarnalTravelModel.Transportion" />
+          <AssociationSet Name="FK_Transportion_Countries" Association="KarnalTravelModel.FK_Transportion_Countries">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Transportion" EntitySet="Transportions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransportImages_Transportion" Association="KarnalTravelModel.FK_TransportImages_Transportion">
+            <End Role="Transportion" EntitySet="Transportions" />
+            <End Role="TransportImage" EntitySet="TransportImages" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Hotels" Relationship="KarnalTravelModel.FK_Hotels_Countries" FromRole="Country" ToRole="Hotel" />
+          <NavigationProperty Name="Resturants" Relationship="KarnalTravelModel.FK_Resturants_Countries" FromRole="Country" ToRole="Resturant" />
+          <NavigationProperty Name="TouristSpots" Relationship="KarnalTravelModel.FK_TouristSpots_Countries1" FromRole="Country" ToRole="TouristSpot" />
+          <NavigationProperty Name="Resorts_" Relationship="KarnalTravelModel.FK_Reports_Countries" FromRole="Country" ToRole="Resorts_" />
+          <NavigationProperty Name="Transportions" Relationship="KarnalTravelModel.FK_Transportion_Countries" FromRole="Country" ToRole="Transportion" />
+        </EntityType>
+        <Association Name="FK_Hotels_Countries">
+          <End Type="KarnalTravelModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.Hotel" Role="Hotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Hotel">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Answer1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Answer2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Answer3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Answer4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Resturant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="Country" Relationship="KarnalTravelModel.FK_Resturants_Countries" FromRole="Resturant" ToRole="Country" />
+          <NavigationProperty Name="RestaurantsOrders" Relationship="KarnalTravelModel.FK_RestaurantsOrders_Resturants" FromRole="Resturant" ToRole="RestaurantsOrder" />
+          <Property Name="PercentDiscount" Type="Int32" />
+          <NavigationProperty Name="ResturantImages" Relationship="KarnalTravelModel.FK__Resturant__restu__160F4887" FromRole="Resturant" ToRole="ResturantImage" />
+        </EntityType>
+        <Association Name="FK_Resturants_Countries">
+          <End Type="KarnalTravelModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.Resturant" Role="Resturant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resturant">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RestaurantsOrders_Resturants">
+          <End Type="KarnalTravelModel.Resturant" Role="Resturant" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.RestaurantsOrder" Role="RestaurantsOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resturant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RestaurantsOrder">
+              <PropertyRef Name="RestaurantsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ContactU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Audlts" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kids" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TouristSpot">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="Country" Relationship="KarnalTravelModel.FK_TouristSpots_Countries1" FromRole="TouristSpot" ToRole="Country" />
+          <NavigationProperty Name="TouristSpotOrders" Relationship="KarnalTravelModel.FK_TouristSpotOrders_TouristSpots" FromRole="TouristSpot" ToRole="TouristSpotOrder" />
+          <NavigationProperty Name="ToristspotImages" Relationship="KarnalTravelModel.FK_ToristspotImages_TouristSpots" FromRole="TouristSpot" ToRole="ToristspotImage" />
+        </EntityType>
+        <Association Name="FK_TouristSpots_Countries1">
+          <End Type="KarnalTravelModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.TouristSpot" Role="TouristSpot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TouristSpot">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TouristSpotOrders_TouristSpots">
+          <End Type="KarnalTravelModel.TouristSpot" Role="TouristSpot" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.TouristSpotOrder" Role="TouristSpotOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TouristSpot">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TouristSpotOrder">
+              <PropertyRef Name="TouristSpotsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Resorts_">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RoomPrice" Type="Int32" Nullable="false" />
+          <Property Name="PercentDiscount" Type="Int32" Nullable="false" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="Country" Relationship="KarnalTravelModel.FK_Reports_Countries" FromRole="Resorts_" ToRole="Country" />
+          <NavigationProperty Name="ResortImages" Relationship="KarnalTravelModel.FK_ResortImage_Resorts_" FromRole="Resorts_" ToRole="ResortImage" />
+        </EntityType>
+        <Association Name="FK_Reports_Countries">
+          <End Type="KarnalTravelModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.Resorts_" Role="Resorts_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resorts_">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ResturantImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imgUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="resturantId" Type="Int32" />
+          <NavigationProperty Name="Resturant" Relationship="KarnalTravelModel.FK__Resturant__restu__160F4887" FromRole="ResturantImage" ToRole="Resturant" />
+        </EntityType>
+        <Association Name="FK__Resturant__restu__160F4887">
+          <End Type="KarnalTravelModel.Resturant" Role="Resturant" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.ResturantImage" Role="ResturantImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resturant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResturantImage">
+              <PropertyRef Name="resturantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ToristspotImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imgurl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Touristspotid" Type="Int32" />
+          <NavigationProperty Name="TouristSpot" Relationship="KarnalTravelModel.FK_ToristspotImages_TouristSpots" FromRole="ToristspotImage" ToRole="TouristSpot" />
+        </EntityType>
+        <Association Name="FK_ToristspotImages_TouristSpots">
+          <End Type="KarnalTravelModel.TouristSpot" Role="TouristSpot" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.ToristspotImage" Role="ToristspotImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TouristSpot">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ToristspotImage">
+              <PropertyRef Name="Touristspotid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HotelImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HotelId" Type="Int32" />
+          <NavigationProperty Name="Hotel" Relationship="KarnalTravelModel.FK_HotelImage_Hotels" FromRole="HotelImage" ToRole="Hotel" />
+        </EntityType>
+        <EntityType Name="ResortImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ResortId" Type="Int32" />
+          <NavigationProperty Name="Resorts_" Relationship="KarnalTravelModel.FK_ResortImage_Resorts_" FromRole="ResortImage" ToRole="Resorts_" />
+        </EntityType>
+        <EntityType Name="TransportImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TransportId" Type="Int32" />
+          <NavigationProperty Name="Transportion" Relationship="KarnalTravelModel.FK_TransportImages_Transportion" FromRole="TransportImage" ToRole="Transportion" />
+        </EntityType>
+        <Association Name="FK_HotelImage_Hotels">
+          <End Type="KarnalTravelModel.Hotel" Role="Hotel" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.HotelImage" Role="HotelImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="HotelImage">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResortImage_Resorts_">
+          <End Type="KarnalTravelModel.Resorts_" Role="Resorts_" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.ResortImage" Role="ResortImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resorts_">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResortImage">
+              <PropertyRef Name="ResortId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Transportion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BussName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="Country" Relationship="KarnalTravelModel.FK_Transportion_Countries" FromRole="Transportion" ToRole="Country" />
+          <NavigationProperty Name="TransportImages" Relationship="KarnalTravelModel.FK_TransportImages_Transportion" FromRole="Transportion" ToRole="TransportImage" />
+        </EntityType>
+        <Association Name="FK_Transportion_Countries">
+          <End Type="KarnalTravelModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.Transportion" Role="Transportion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transportion">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransportImages_Transportion">
+          <End Type="KarnalTravelModel.Transportion" Role="Transportion" Multiplicity="0..1" />
+          <End Type="KarnalTravelModel.TransportImage" Role="TransportImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transportion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TransportImage">
+              <PropertyRef Name="TransportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KarnalTravelModelStoreContainer" CdmEntityContainer="KarnalTravelEntities">
+          <EntitySetMapping Name="HotelOrders">
+            <EntityTypeMapping TypeName="KarnalTravelModel.HotelOrder">
+              <MappingFragment StoreEntitySet="HotelOrders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+                <ScalarProperty Name="RequiredRooms" ColumnName="RequiredRooms" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hotels">
+            <EntityTypeMapping TypeName="KarnalTravelModel.Hotel">
+              <MappingFragment StoreEntitySet="Hotels">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+                <ScalarProperty Name="PercentDiscount" ColumnName="PercentDiscount" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RestaurantsOrders">
+            <EntityTypeMapping TypeName="KarnalTravelModel.RestaurantsOrder">
+              <MappingFragment StoreEntitySet="RestaurantsOrders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RestaurantsId" ColumnName="RestaurantsId" />
+                <ScalarProperty Name="RequiredPercentSets" ColumnName="RequiredPercentSets" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TouristSpotOrders">
+            <EntityTypeMapping TypeName="KarnalTravelModel.TouristSpotOrder">
+              <MappingFragment StoreEntitySet="TouristSpotOrders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TouristSpotsId" ColumnName="TouristSpotsId" />
+                <ScalarProperty Name="Person" ColumnName="Person" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="KarnalTravelModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="KarnalTravelModel.UserType">
+              <MappingFragment StoreEntitySet="UserTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="KarnalTravelModel.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feedbacks">
+            <EntityTypeMapping TypeName="KarnalTravelModel.Feedback">
+              <MappingFragment StoreEntitySet="Feedbacks">
+                <ScalarProperty Name="Answer4" ColumnName="Answer4" />
+                <ScalarProperty Name="Answer3" ColumnName="Answer3" />
+                <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+                <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resturants">
+            <EntityTypeMapping TypeName="KarnalTravelModel.Resturant">
+              <MappingFragment StoreEntitySet="Resturants">
+                <ScalarProperty Name="PercentDiscount" ColumnName="PercentDiscount" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactUs">
+            <EntityTypeMapping TypeName="KarnalTravelModel.ContactU">
+              <MappingFragment StoreEntitySet="ContactUs">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Kids" ColumnName="Kids" />
+                <ScalarProperty Name="Audlts" ColumnName="Audlts" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TouristSpots">
+            <EntityTypeMapping TypeName="KarnalTravelModel.TouristSpot">
+              <MappingFragment StoreEntitySet="TouristSpots">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resorts_">
+            <EntityTypeMapping TypeName="KarnalTravelModel.Resorts_">
+              <MappingFragment StoreEntitySet="Resorts ">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="PercentDiscount" ColumnName="PercentDiscount" />
+                <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResturantImages">
+            <EntityTypeMapping TypeName="KarnalTravelModel.ResturantImage">
+              <MappingFragment StoreEntitySet="ResturantImages">
+                <ScalarProperty Name="resturantId" ColumnName="resturantId" />
+                <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ToristspotImages">
+            <EntityTypeMapping TypeName="KarnalTravelModel.ToristspotImage">
+              <MappingFragment StoreEntitySet="ToristspotImages">
+                <ScalarProperty Name="Touristspotid" ColumnName="Touristspotid" />
+                <ScalarProperty Name="imgurl" ColumnName="imgurl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotelImages">
+            <EntityTypeMapping TypeName="KarnalTravelModel.HotelImage">
+              <MappingFragment StoreEntitySet="HotelImage">
+                <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResortImages">
+            <EntityTypeMapping TypeName="KarnalTravelModel.ResortImage">
+              <MappingFragment StoreEntitySet="ResortImage">
+                <ScalarProperty Name="ResortId" ColumnName="ResortId" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransportImages">
+            <EntityTypeMapping TypeName="KarnalTravelModel.TransportImage">
+              <MappingFragment StoreEntitySet="TransportImages">
+                <ScalarProperty Name="TransportId" ColumnName="TransportId" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transportions">
+            <EntityTypeMapping TypeName="KarnalTravelModel.Transportion">
+              <MappingFragment StoreEntitySet="Transportion">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="BussName" ColumnName="BussName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

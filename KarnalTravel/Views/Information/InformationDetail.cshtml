@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "InformationDetail";
+    Layout = "~/Views/Shared/FrontEnd.cshtml";
+    var points = (IEnumerable<KarnalTravel.TouristSpot>)ViewBag.Touristspot;
+    var restaurents = (IEnumerable<KarnalTravel.Resturant>)ViewBag.restaurents;
+    var hotel = (IEnumerable<KarnalTravel.Hotel>)ViewBag.hotels;
+    var resorts = (IEnumerable<KarnalTravel.Resorts_>)ViewBag.Resorts;
+    var transportation = (IEnumerable<KarnalTravel.Transportion>)ViewBag.Transport;
+}
+
+<!-- Booking -->
+
+
+
+<section class="banner_inner" id="home">
+    <div class="banner_inner_overlay">
+    </div>
+</section>
+<section class="contact py-5">
+    <div class="container py-lg-5 py-sm-4">
+        <h2 class="heading text-capitalize text-center mb-lg-5 mb-4"> Book Your Tour</h2>
+   
+        <div class="col-lg-5 contact-right pl-lg-5">
+
+
+            <div class="image-tour position-relative">
+                <img src="~/uploading/@ViewBag.info.Photo" alt="" class="img-fluid"  style="width:700px;"/>
+            </div>
+            <ul class="listing mt-3">
+                <li>
+
+                    <h4>@ViewBag.info.Name</h4>
+                    <p class="mt-3">
+                        @ViewBag.info.Details
+
+                    </p>
+
+                    </li></ul>
+        </div>
+            </div>
+        
+</section>
+<!-- //Booking -->

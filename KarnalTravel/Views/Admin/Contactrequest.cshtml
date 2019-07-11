@@ -1,0 +1,70 @@
+﻿@model IEnumerable<KarnalTravel.ContactU>
+
+@{
+    ViewBag.Title = "Contactrequest";
+    Layout = "~/Views/Shared/BackEnd.cshtml";
+}
+<style>
+    .moveside {
+        margin-left: 40px;
+    }
+</style>
+<div class="moveside">
+    <h2>Booking Request</h2>
+
+    <table class="table" style="margin-top:50px;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Audlts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kids)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Audlts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kids)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

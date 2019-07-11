@@ -1,0 +1,67 @@
+﻿@model KarnalTravel.Transportion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/BackEnd.cshtml";
+}
+
+<style>
+    .moveleft{
+        margin-left:30px;
+    }
+
+</style>
+<div class="moveleft">
+    <h2>Details</h2>
+
+    <div>
+        <h4>Transportion</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BussName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BussName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Photo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Photo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Details)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Details)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Country.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Country.Name)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

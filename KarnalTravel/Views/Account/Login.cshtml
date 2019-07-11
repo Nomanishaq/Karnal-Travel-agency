@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/FrontEnd.cshtml";
+}
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="/Templates/Login/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <div class="padding-all"><br /><br /><br />
+        <div class="header">
+            <h1 style="margin-bottom:-70px;">Sign in</h1>
+        </div>
+
+        <div class="design-w3l">
+          
+            <div class="mail-form-agile">
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                {
+                    
+
+
+                    <input type="text" name="email" placeholder="User Name  or  email..." required="" />
+                    <input type="password" name="password" class="padding" placeholder="Password" required="" />
+
+
+                    <input type="submit" value="login">
+                }
+
+
+            </div>
+            <div class="clear"> </div>
+            <a href="@Url.Action("Registration","Account")"><h1 style="color:white; font-size:30px;">Sign Up Here</h1></a>
+
+        </div>
+
+    </div>

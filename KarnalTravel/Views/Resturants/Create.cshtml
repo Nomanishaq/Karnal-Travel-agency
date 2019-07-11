@@ -1,0 +1,49 @@
+﻿@model KarnalTravel.Resturant
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/BackEnd.cshtml";
+}
+
+<style>
+    .move-side {
+        margin-left: 40px;
+    }
+</style>
+<div class="move-side">
+<h2>Add new Resturants</h2>
+    <br />
+   
+     <form action="~/Resturants/Create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" name="Name" required/>
+        </div>
+        <div class="form-group">
+            <label for="file">Photo</label>
+            <input type="file" class="form-control" name="file" required />
+        </div>
+        <div class="form-group">
+            <label for="Detail">Detail</label>
+            <input type="text" class="form-control" name="Detail" required />
+        </div>
+        <div class="form-group">
+            <label for="Country">Country</label>
+            <select name="country" class="form-control">
+                <option>Select Country</option>
+            @foreach (var item in ViewBag.CountryId)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary"/>
+        </div>
+    </form>
+
+    <br />
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+</div>

@@ -1,0 +1,65 @@
+﻿@model KarnalTravel.Resorts_
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/BackEnd.cshtml";
+}
+
+<style>
+    .move-side {
+        margin-left: 30px;
+    }
+</style>
+<div class="move-side">
+    <h2>Add new Resort</h2>
+    <br />
+    <form action="~/Resorts_/Create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" name="Name" required />
+        </div>
+        <div class="form-group">
+            <label for="file">Photo</label>
+            <input type="file" class="form-control" name="file" required />
+        </div>
+        <div class="form-group">
+            <label for="Detail">Detail</label>
+            <input type="text" class="form-control" name="Detail" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Detail">Location</label>
+            <input type="text" class="form-control" name="location" required />
+        </div>
+        <div class="form-group">
+            <label for="Detail">Room</label>
+            <input type="text" class="form-control" name="room" required />
+        </div>
+        <div class="form-group">
+            <label for="Detail">Discount</label>
+            <input type="text" class="form-control" name="discount" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Country">Country</label>
+            <select name="country" class="form-control">
+                <option>Select Country</option>
+                @foreach (var item in ViewBag.CountryId)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </div>
+    </form>
+    <br />
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="80811c6f6fb146929b2ff2024ca9062f" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="KarnalTravelModel.HotelOrder" Width="1.5" PointX="6.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KarnalTravelModel.Hotel" Width="1.5" PointX="0.625" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KarnalTravelModel.RestaurantsOrder" Width="1.5" PointX="8.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KarnalTravelModel.TouristSpotOrder" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KarnalTravelModel.User" Width="1.5" PointX="3.375" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KarnalTravelModel.UserType" Width="1.5" PointX="0.625" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="KarnalTravelModel.FK_HotelOrders_Hotels" ManuallyRouted="false" />
+        <AssociationConnector Association="KarnalTravelModel.FK_HotelOrders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="KarnalTravelModel.FK_RestaurantsOrders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="KarnalTravelModel.FK_TouristSpotOrders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="KarnalTravelModel.FK_Users_UserTypes" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KarnalTravelModel.Country" Width="1.5" PointX="0.625" PointY="1.25" />
+        <AssociationConnector Association="KarnalTravelModel.FK_Hotels_Countries" />
+        <EntityTypeShape EntityType="KarnalTravelModel.Feedback" Width="1.5" PointX="11.125" PointY="3.5" />
+        <EntityTypeShape EntityType="KarnalTravelModel.Resturant" Width="1.5" PointX="3.75" PointY="13.25" />
+        <AssociationConnector Association="KarnalTravelModel.FK_Resturants_Countries" />
+        <AssociationConnector Association="KarnalTravelModel.FK_RestaurantsOrders_Resturants" />
+        <EntityTypeShape EntityType="KarnalTravelModel.ContactU" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="KarnalTravelModel.TouristSpot" Width="1.5" PointX="2.875" PointY="1.125" />
+        <AssociationConnector Association="KarnalTravelModel.FK_TouristSpots_Countries1" />
+        <AssociationConnector Association="KarnalTravelModel.FK_TouristSpotOrders_TouristSpots" />
+        <EntityTypeShape EntityType="KarnalTravelModel.Resorts_" Width="1.5" PointX="3" PointY="9" />
+        <AssociationConnector Association="KarnalTravelModel.FK_Reports_Countries" />
+        <EntityTypeShape EntityType="KarnalTravelModel.ResturantImage" Width="1.5" PointX="6" PointY="13.75" />
+        <AssociationConnector Association="KarnalTravelModel.FK__Resturant__restu__160F4887" />
+        <EntityTypeShape EntityType="KarnalTravelModel.ToristspotImage" Width="1.5" PointX="5.125" PointY="17.5" />
+        <AssociationConnector Association="KarnalTravelModel.FK_ToristspotImages_TouristSpots" />
+        <EntityTypeShape EntityType="KarnalTravelModel.HotelImage" Width="1.5" PointX="3" PointY="19.125" />
+        <EntityTypeShape EntityType="KarnalTravelModel.ResortImage" Width="1.5" PointX="5.375" PointY="10.625" />
+        <EntityTypeShape EntityType="KarnalTravelModel.TransportImage" Width="1.5" PointX="4.125" PointY="22.375" />
+        <AssociationConnector Association="KarnalTravelModel.FK_HotelImage_Hotels" />
+        <AssociationConnector Association="KarnalTravelModel.FK_ResortImage_Resorts_" />
+        <EntityTypeShape EntityType="KarnalTravelModel.Transportion" Width="1.5" PointX="2.875" PointY="25.125" />
+        <AssociationConnector Association="KarnalTravelModel.FK_Transportion_Countries" />
+        <AssociationConnector Association="KarnalTravelModel.FK_TransportImages_Transportion" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

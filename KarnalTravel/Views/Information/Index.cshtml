@@ -1,0 +1,266 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/FrontEnd.cshtml";
+    var points = (IEnumerable<KarnalTravel.TouristSpot>)ViewBag.Touristspot;
+    var restaurents = (IEnumerable<KarnalTravel.Resturant>)ViewBag.restaurents;
+    var hotel = (IEnumerable<KarnalTravel.Hotel>)ViewBag.hotels;
+    var resorts = (IEnumerable<KarnalTravel.Resorts_>)ViewBag.Resorts;
+    var transportation = (IEnumerable<KarnalTravel.Transportion>)ViewBag.Transport;
+}
+
+<section class="banner_inner" id="home">
+    <div class="banner_inner_overlay">
+    </div>
+</section><br /><br />
+
+<section class="destinations py-5" id="destinations">
+    <div class="container py-xl-5 py-lg-3">
+        <h3 class="heading text-capitalize text-center">Resturants </h3>
+        <p class="text mt-2 mb-5 text-center">Vestibulum tellus neque, sodales vel mauris at, rhoncus finibus augue. Vestibulum urna ligula, molestie at ante ut, finibus vulputate felis.</p>
+        <div class="package-info">
+
+            <div class="row inner-sec-w3layouts-w3pvt-lauinfo">
+
+                @foreach (var item in restaurents)
+                {
+
+                    <div class="col-md-3 col-sm-6 col-6 destinations-grids text-center">
+
+                        <div class="image-position position-relative">
+                            <img src="~/uploading/@item.Photo" class="img-fluid" alt="" width="300">
+
+                        </div>
+
+                        <ul class="listing mt-3">
+                            <li>
+                                <h6 class="mt-1">
+                                    <span class="fa fa-map-marker mr-2"></span>@if (item.Country != null)
+                                    {
+                                        var cname = item.Country.Name;<span>@cname</span>
+                                    }
+                                </h6>
+                                <h6 class="my-2">@item.Name</h6>
+
+                            </li>
+                        </ul>
+                        <div class="destinations-info">
+                            <div class="caption mb-lg-3">
+                                <h5 class="my-2">@item.Name</h5>
+                                <a href="@Url.Action("InformationDetail", new { Id = item.Id, infotype  = 1})">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+
+            </div>
+        </div>
+
+           </div>
+</section>
+
+
+
+
+
+
+
+<section class="destinations py-5" id="destinations">
+    <div class="container py-xl-5 py-lg-3">
+        <h3 class="heading text-capitalize text-center">TouristSpot </h3>
+        <p class="text mt-2 mb-5 text-center">Vestibulum tellus neque, sodales vel mauris at, rhoncus finibus augue. Vestibulum urna ligula, molestie at ante ut, finibus vulputate felis.</p>
+        <div class="package-info">
+
+            <div class="row inner-sec-w3layouts-w3pvt-lauinfo">
+
+                @foreach (var item in points)
+                {
+                    <div class="col-md-3 col-sm-6 col-6 destinations-grids text-center">
+
+                        <div class="image-position position-relative">
+                            <img src="~/uploading/@item.Photo" class="img-fluid" alt="" width="300">
+
+                        </div>
+
+                        <ul class="listing mt-3">
+                            <li>
+                                <h6 class="mt-1">
+                                    <span class="fa fa-map-marker mr-2"></span>@if (item.Country != null)
+                                    {
+                                        var cname = item.Country.Name;<span>@cname</span>
+                                    }
+                                </h6>
+                                <h5 class="my-2">@item.Name</h5>
+
+                            </li>
+                        </ul>
+
+
+                        <div class="destinations-info">
+                            <div class="caption mb-lg-3">
+                                <h6 class="my-2">@item.Name</h6>
+                                <a href="@Url.Action("InformationDetail", new { Id = item.Id, infotype  = 2})">Details</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                }
+            </div>
+        </div>  
+    </div>
+</section>
+
+
+
+<section class="destinations py-5" id="destinations">
+    <div class="container py-xl-5 py-lg-3">
+        <h3 class="heading text-capitalize text-center">Hotels </h3>
+        <p class="text mt-2 mb-5 text-center">Vestibulum tellus neque, sodales vel mauris at, rhoncus finibus augue. Vestibulum urna ligula, molestie at ante ut, finibus vulputate felis.</p>
+        <div class="package-info">
+
+            <div class="row inner-sec-w3layouts-w3pvt-lauinfo">
+
+                @foreach (var item in hotel)
+                {
+                    <div class="col-md-3 col-sm-6 col-6 destinations-grids text-center">
+
+                        <div class="image-position position-relative">
+                            <img src="~/uploading/@item.Photo" class="img-fluid" alt="" width="300">
+
+                        </div>
+                        <ul class="listing mt-3">
+                            <li>
+                                <h6 class="mt-1">
+                                    <span class="fa fa-map-marker mr-2"></span>@if (item.Country != null)
+                                    {
+                                        var cname = item.Country.Name;<span>@cname</span>
+                                    }
+                                </h6>
+                                <h5 class="my-2">@item.Name</h5>
+
+                            </li>
+                        </ul>
+
+                        <div class="destinations-info">
+                            <div class="caption mb-lg-3">
+                                <h6 class="my-2">@item.Name</h6>
+                                <a href="@Url.Action("InformationDetail", new { Id = item.Id, infotype  = 3})">Details</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                }
+
+
+
+            </div>
+            </div>
+        </div>
+</section>
+
+
+
+<section class="destinations py-5" id="destinations">
+    <div class="container py-xl-5 py-lg-3">
+        <h3 class="heading text-capitalize text-center">Resorts </h3>
+        <p class="text mt-2 mb-5 text-center">Vestibulum tellus neque, sodales vel mauris at, rhoncus finibus augue. Vestibulum urna ligula, molestie at ante ut, finibus vulputate felis.</p>
+        <div class="package-info">
+
+            <div class="row inner-sec-w3layouts-w3pvt-lauinfo">
+
+                @foreach (var item in resorts)
+                {
+                    <div class="col-md-3 col-sm-6 col-6 destinations-grids text-center">
+
+                        <div class="image-position position-relative">
+                            <img src="~/uploading/@item.Photo" class="img-fluid" alt="" width="300">
+
+
+                        </div>
+                        <ul class="listing mt-3">
+                            <li>
+                                <h6 class="mt-1">
+                                    <span class="fa fa-map-marker mr-2"></span>@if (item.Country != null)
+                                    {
+                                        var cname = item.Country.Name;<span>@cname</span>
+                                    }
+                                </h6>
+                                <h5 class="my-2">@item.Name</h5>
+
+                            </li>
+                        </ul>
+
+                        <div class="destinations-info">
+                            <div class="caption mb-lg-3">
+
+                                <h5 class="my-2">@item.Name</h5>
+                                <a href="@Url.Action("InformationDetail", new { Id = item.Id, infotype  = 4})">Details</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                }
+
+
+
+            </div>
+            </div>
+        </div>
+</section>
+
+
+
+
+
+<section class="destinations py-5" id="destinations">
+    <div class="container py-xl-5 py-lg-3">
+        <h3 class="heading text-capitalize text-center">Transports </h3>
+        <p class="text mt-2 mb-5 text-center">Vestibulum tellus neque, sodales vel mauris at, rhoncus finibus augue. Vestibulum urna ligula, molestie at ante ut, finibus vulputate felis.</p>
+        <div class="package-info">
+
+            <div class="row inner-sec-w3layouts-w3pvt-lauinfo">
+
+                @foreach (var item in transportation)
+                {
+                    <div class="col-md-3 col-sm-6 col-6 destinations-grids text-center">
+
+                        <div class="image-position position-relative">
+                            <img src="~/uploading/@item.Photo" class="img-fluid" alt="" width="300">
+
+                        </div>
+                        <ul class="listing mt-3">
+                            <li>
+                                <h6 class="mt-1">
+                                    <span class="fa fa-map-marker mr-2"></span>@if (item.Country != null)
+                                    {
+                                        var cname = item.Country.Name;<span>@cname</span>
+                                    }
+                                </h6>
+                                <h5 class="my-2">@item.BussName</h5>
+
+                            </li>
+                        </ul>
+
+
+
+                        <div class="destinations-info">
+                            <div class="caption mb-lg-3">
+                                <h5 class="my-2">@item.BussName</h5>
+                                <a href="@Url.Action("InformationDetail", new { Id = item.Id, infotype = 5 })">Details</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                }
+
+
+
+            </div>
+            </div>
+        </div>
+</section>

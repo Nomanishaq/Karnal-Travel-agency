@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KarnalTravelModelStoreContainer" CdmEntityContainer="KarnalTravelEntities">
+    <EntitySetMapping Name="HotelOrders">
+      <EntityTypeMapping TypeName="KarnalTravelModel.HotelOrder">
+        <MappingFragment StoreEntitySet="HotelOrders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="RequiredRooms" ColumnName="RequiredRooms" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotels">
+      <EntityTypeMapping TypeName="KarnalTravelModel.Hotel">
+        <MappingFragment StoreEntitySet="Hotels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+          <ScalarProperty Name="PercentDiscount" ColumnName="PercentDiscount" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantsOrders">
+      <EntityTypeMapping TypeName="KarnalTravelModel.RestaurantsOrder">
+        <MappingFragment StoreEntitySet="RestaurantsOrders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RestaurantsId" ColumnName="RestaurantsId" />
+          <ScalarProperty Name="RequiredPercentSets" ColumnName="RequiredPercentSets" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TouristSpotOrders">
+      <EntityTypeMapping TypeName="KarnalTravelModel.TouristSpotOrder">
+        <MappingFragment StoreEntitySet="TouristSpotOrders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TouristSpotsId" ColumnName="TouristSpotsId" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="KarnalTravelModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="KarnalTravelModel.UserType">
+        <MappingFragment StoreEntitySet="UserTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="KarnalTravelModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="KarnalTravelModel.Feedback">
+        <MappingFragment StoreEntitySet="Feedbacks">
+          <ScalarProperty Name="Answer4" ColumnName="Answer4" />
+          <ScalarProperty Name="Answer3" ColumnName="Answer3" />
+          <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resturants">
+      <EntityTypeMapping TypeName="KarnalTravelModel.Resturant">
+        <MappingFragment StoreEntitySet="Resturants">
+          <ScalarProperty Name="PercentDiscount" ColumnName="PercentDiscount" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUs">
+      <EntityTypeMapping TypeName="KarnalTravelModel.ContactU">
+        <MappingFragment StoreEntitySet="ContactUs">
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Kids" ColumnName="Kids" />
+          <ScalarProperty Name="Audlts" ColumnName="Audlts" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TouristSpots">
+      <EntityTypeMapping TypeName="KarnalTravelModel.TouristSpot">
+        <MappingFragment StoreEntitySet="TouristSpots">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resorts_">
+      <EntityTypeMapping TypeName="KarnalTravelModel.Resorts_">
+        <MappingFragment StoreEntitySet="Resorts ">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="PercentDiscount" ColumnName="PercentDiscount" />
+          <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResturantImages">
+      <EntityTypeMapping TypeName="KarnalTravelModel.ResturantImage">
+        <MappingFragment StoreEntitySet="ResturantImages">
+          <ScalarProperty Name="resturantId" ColumnName="resturantId" />
+          <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ToristspotImages">
+      <EntityTypeMapping TypeName="KarnalTravelModel.ToristspotImage">
+        <MappingFragment StoreEntitySet="ToristspotImages">
+          <ScalarProperty Name="Touristspotid" ColumnName="Touristspotid" />
+          <ScalarProperty Name="imgurl" ColumnName="imgurl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotelImages">
+      <EntityTypeMapping TypeName="KarnalTravelModel.HotelImage">
+        <MappingFragment StoreEntitySet="HotelImage">
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResortImages">
+      <EntityTypeMapping TypeName="KarnalTravelModel.ResortImage">
+        <MappingFragment StoreEntitySet="ResortImage">
+          <ScalarProperty Name="ResortId" ColumnName="ResortId" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransportImages">
+      <EntityTypeMapping TypeName="KarnalTravelModel.TransportImage">
+        <MappingFragment StoreEntitySet="TransportImages">
+          <ScalarProperty Name="TransportId" ColumnName="TransportId" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transportions">
+      <EntityTypeMapping TypeName="KarnalTravelModel.Transportion">
+        <MappingFragment StoreEntitySet="Transportion">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="BussName" ColumnName="BussName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
